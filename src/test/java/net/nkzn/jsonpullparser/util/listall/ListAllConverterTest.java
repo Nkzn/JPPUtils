@@ -185,6 +185,11 @@ public class ListAllConverterTest {
 
 	}
 	
+	/**
+	 * keyが無い場合
+	 * @throws IOException
+	 * @throws JsonFormatException
+	 */
 	@Test
 	public void hasAbsentKey() throws IOException, JsonFormatException {
 		String json = "{\"value_list1\":[\"hoge1\",\"fuga1\"],\"value_single\":\"piyo\"}";
