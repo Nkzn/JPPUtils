@@ -1,4 +1,4 @@
-package net.nkzn.jsonpullparser.util.listall;
+package net.nkzn.jsonpullparser.util.converter;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import net.vvakame.util.jsonpullparser.annotation.JsonKey;
 import net.vvakame.util.jsonpullparser.annotation.JsonModel;
 
 @JsonModel(decamelize=true)
-public class Item {
+public class String2ListItem {
 
 	@JsonKey(converter=String2ListConverter.class)
 	List<String> valueList1;

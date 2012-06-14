@@ -1,4 +1,8 @@
-package net.nkzn.jsonpullparser.util.listall;
+package net.nkzn.jsonpullparser.util.converter;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -7,10 +11,6 @@ import java.util.List;
 import net.vvakame.util.jsonpullparser.JsonFormatException;
 
 import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.*;
-
-import static org.junit.Assert.*; 
 
 public class String2ListConverterTest {
 
@@ -25,7 +25,7 @@ public class String2ListConverterTest {
 		String json = "{\"value_list1\":[\"hoge1\",\"fuga1\"],\"value_list2\":[\"hoge2\",\"fuga2\"],\"value_single\":\"piyo\"}";
 		
 		// JSON->POJO
-		Item item = ItemGen.get(json);
+		String2ListItem item = String2ListItemGen.get(json);
 		
 		List<String> valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));
@@ -40,11 +40,11 @@ public class String2ListConverterTest {
 		// POJO->JSON
 		// 「めんどいからもっかい復号しておｋだったらおｋ」方式
 		StringWriter writer = new StringWriter();
-		ItemGen.encode(writer, item);
+		String2ListItemGen.encode(writer, item);
 		json = writer.toString();
 		
 		// JSON->POJO
-		item = ItemGen.get(json);
+		item = String2ListItemGen.get(json);
 		
 		valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));
@@ -68,7 +68,7 @@ public class String2ListConverterTest {
 		String json = "{\"value_list1\":\"hoge1\",\"value_list2\":\"fuga2\",\"value_single\":\"piyo\"}";
 
 		// JSON->POJO
-		Item item = ItemGen.get(json);
+		String2ListItem item = String2ListItemGen.get(json);
 		
 		List<String> valueList1 = item.getValueList1();
 		assertThat(valueList1.size(), is(1));
@@ -83,11 +83,11 @@ public class String2ListConverterTest {
 		// POJO->JSON
 		// 「めんどいからもっかい復号しておｋだったらおｋ」方式
 		StringWriter writer = new StringWriter();
-		ItemGen.encode(writer, item);
+		String2ListItemGen.encode(writer, item);
 		json = writer.toString();
 
 		// JSON->POJO
-		item = ItemGen.get(json);
+		item = String2ListItemGen.get(json);
 		
 		valueList1 = item.getValueList1();
 		assertThat(valueList1.size(), is(1));
@@ -111,7 +111,7 @@ public class String2ListConverterTest {
 		String json = "{\"value_list1\":[\"hoge1\",\"fuga1\"],\"value_list2\":\"fuga2\",\"value_single\":\"piyo\"}";
 		
 		// JSON->POJO
-		Item item = ItemGen.get(json);
+		String2ListItem item = String2ListItemGen.get(json);
 		
 		List<String> valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));
@@ -126,11 +126,11 @@ public class String2ListConverterTest {
 		// POJO->JSON
 		// 「めんどいからもっかい復号しておｋだったらおｋ」方式
 		StringWriter writer = new StringWriter();
-		ItemGen.encode(writer, item);
+		String2ListItemGen.encode(writer, item);
 		json = writer.toString();
 
 		// JSON->POJO
-		item = ItemGen.get(json);
+		item = String2ListItemGen.get(json);
 		
 		valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));
@@ -154,7 +154,7 @@ public class String2ListConverterTest {
 		String json = "{\"value_list1\":[],\"value_list2\":[\"hoge2\",\"fuga2\"],\"value_single\":\"piyo\"}";
 		
 		// JSON->POJO
-		Item item = ItemGen.get(json);
+		String2ListItem item = String2ListItemGen.get(json);
 		
 		List<String> valueList1 = item.getValueList1();
 		assertThat(valueList1.size(), is(0));
@@ -168,11 +168,11 @@ public class String2ListConverterTest {
 		// POJO->JSON
 		// 「めんどいからもっかい復号しておｋだったらおｋ」方式
 		StringWriter writer = new StringWriter();
-		ItemGen.encode(writer, item);
+		String2ListItemGen.encode(writer, item);
 		json = writer.toString();
 		
 		// JSON->POJO
-		item = ItemGen.get(json);
+		item = String2ListItemGen.get(json);
 		
 		valueList1 = item.getValueList1();
 		assertThat(valueList1.size(), is(0));
@@ -195,7 +195,7 @@ public class String2ListConverterTest {
 		String json = "{\"value_list1\":[\"hoge1\",\"fuga1\"],\"value_single\":\"piyo\"}";
 		
 		// JSON->POJO
-		Item item = ItemGen.get(json);
+		String2ListItem item = String2ListItemGen.get(json);
 		
 		List<String> valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));
@@ -209,11 +209,11 @@ public class String2ListConverterTest {
 		// POJO->JSON
 		// 「めんどいからもっかい復号しておｋだったらおｋ」方式
 		StringWriter writer = new StringWriter();
-		ItemGen.encode(writer, item);
+		String2ListItemGen.encode(writer, item);
 		json = writer.toString();
 
 		// JSON->POJO
-		item = ItemGen.get(json);
+		item = String2ListItemGen.get(json);
 		
 		valueList1 = item.getValueList1();
 		assertThat(valueList1.get(0), is("hoge1"));

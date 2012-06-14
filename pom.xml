@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.nkzn.jsonpullparser.util.converter</groupId>
   <artifactId>JPPUtils</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
   <name>JPPUtils</name>
   <description>Utilities for JsonPullParser</description>
   <dependencies>
