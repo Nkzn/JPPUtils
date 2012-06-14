@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 import static org.junit.Assert.*; 
 
-public class ListAllConverterTest {
+public class String2ListConverterTest {
 
 	/**
 	 * 配列がListへマッピングされる

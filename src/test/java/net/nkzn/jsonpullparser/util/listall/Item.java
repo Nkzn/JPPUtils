@@ -2,17 +2,17 @@ package net.nkzn.jsonpullparser.util.listall;
 
 import java.util.List;
 
-import net.nkzn.jsonpullparser.util.converter.ListAllConverter;
+import net.nkzn.jsonpullparser.util.converter.String2ListConverter;
 import net.vvakame.util.jsonpullparser.annotation.JsonKey;
 import net.vvakame.util.jsonpullparser.annotation.JsonModel;
 
 @JsonModel(decamelize=true)
 public class Item {
 
-	@JsonKey(converter=ListAllConverter.class)
+	@JsonKey(converter=String2ListConverter.class)
 	List<String> valueList1;
 	
-	@JsonKey(converter=ListAllConverter.class)
+	@JsonKey(converter=String2ListConverter.class)
 	List<String> valueList2;
 	
 	@JsonKey

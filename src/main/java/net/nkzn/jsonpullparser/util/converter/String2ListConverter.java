@@ -13,13 +13,13 @@ import net.vvakame.util.jsonpullparser.util.OnJsonObjectAddListener;
 import net.vvakame.util.jsonpullparser.util.TokenConverter;
 import static net.vvakame.util.jsonpullparser.util.JsonUtil.*;
 
-public class ListAllConverter extends TokenConverter<List<String>> {
+public class String2ListConverter extends TokenConverter<List<String>> {
 
-	static ListAllConverter conv = null;
+	static String2ListConverter conv = null;
 	
-	public static ListAllConverter getInstance() {
+	public static String2ListConverter getInstance() {
 		if(conv == null) {
-			conv = new ListAllConverter();
+			conv = new String2ListConverter();
 		}
 		return conv;
 	}
